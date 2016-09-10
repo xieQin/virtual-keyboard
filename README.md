@@ -6,6 +6,8 @@ iOS style virtual-keyboard
 using js, css
 
 ## To do
-> vue component
-> react component
-> full virtual keyboard
+>- vue component
+
+>- react component
+
+>- full virtual keyboard
