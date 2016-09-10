@@ -2,6 +2,26 @@ var keyboard = document.getElementById('keyboard')
 var input = document.getElementById('input')
 var items = document.getElementsByClassName('item')
 var add = ''
+var isKeyboard = false
+
+input.addEventListener('click', function(e) {
+    if(!isKeyboard) {
+        keyboard.className = 'keyboard-num' + ' fade-up'
+        isKeyboard = true
+        if(input.innerHTML.trim() === 'click to activate virtual keyboard') {
+            input.innerHTML = ''
+        }
+    }
+}, false)
+
+document.addEventListener('click', function(e) {
+    let classname = e.srcElement.className
+    if(/input/.test(classname) || /letter/.test(classname) || /num/.test(classname) || /item/.test(classname) || /keyboard-num/.test(classname)) {
+        return
+    }
+    keyboard.className = 'keyboard-num' + ' fade-down'
+    isKeyboard = false
+}, false)
 
 for (var i = 0; i < items.length; i++) {
     items[i].addEventListener('click', function(e) {
