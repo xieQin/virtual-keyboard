@@ -1,0 +1,23 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "virtual keyboard ios style",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xieQin/virtual-keyboard.git"
+  },
+  "keywords": [
+    "virtual-keyboard",
+    "css"
+  ],
+  "author": "xieq",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xieQin/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/xieQin/virtual-keyboard#readme"
+}
