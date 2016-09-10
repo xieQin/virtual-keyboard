@@ -1,3 +1,4 @@
+var app = document.getElementById('app')
 var keyboard = document.getElementById('keyboard')
 var input = document.getElementById('input')
 var items = document.getElementsByClassName('item')
@@ -14,7 +15,7 @@ input.addEventListener('click', function(e) {
     }
 }, false)
 
-document.addEventListener('click', function(e) {
+app.addEventListener('click', function(e) {
     var classname = e.srcElement.className
     if(/input/.test(classname) || /letter/.test(classname) || /num/.test(classname) || /item/.test(classname) || /keyboard-num/.test(classname)) {
         return
