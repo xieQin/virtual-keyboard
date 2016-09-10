@@ -16,6 +16,9 @@ input.addEventListener('click', function(e) {
 }, false)
 
 app.addEventListener('click', function(e) {
+    if(!isKeyboard) {
+        return
+    }
     var classname = e.srcElement.className
     if(/input/.test(classname) || /letter/.test(classname) || /num/.test(classname) || /item/.test(classname) || /keyboard-num/.test(classname)) {
         return
