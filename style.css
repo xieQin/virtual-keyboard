@@ -19,7 +19,7 @@ html, body {
     position: absolute;
     width: 100%;
     left: 0;
-    bottom: 0;
+    bottom: -220px;
     background-color: #ccc;
 }
 
@@ -111,3 +111,23 @@ html, body {
 .item.c {
     background-color: #ccc;
 }
+
+.fade-up {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    backface-visibility: hidden;
+    animation-name: fadeUp;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, -220px, 0);
+    }
+}
+
+
+
