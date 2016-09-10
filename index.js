@@ -15,11 +15,14 @@ input.addEventListener('click', function(e) {
 }, false)
 
 document.addEventListener('click', function(e) {
-    let classname = e.srcElement.className
+    var classname = e.srcElement.className
     if(/input/.test(classname) || /letter/.test(classname) || /num/.test(classname) || /item/.test(classname) || /keyboard-num/.test(classname)) {
         return
     }
     keyboard.className = 'keyboard-num' + ' fade-down'
+    if(input.innerHTML.trim() === '') {
+        input.innerHTML = 'click to activate virtual keyboard'
+    }
     isKeyboard = false
 }, false)
 
