@@ -20,7 +20,7 @@ app.addEventListener('click', function(e) {
         return
     }
     var classname = e.srcElement.className
-    if(/input/.test(classname) || /letter/.test(classname) || /num/.test(classname) || /item/.test(classname) || /keyboard-num/.test(classname)) {
+    if(/input/.test(classname) || /letter/.test(classname) || /num/.test(classname) || /item/.test(classname) || /keyboard-num/.test(classname) || /backspace/.test(classname)) {
         return
     }
     keyboard.className = 'keyboard-num' + ' fade-down'
@@ -42,6 +42,10 @@ for (var i = 0; i < items.length; i++) {
             input.innerHTML += add
             return
         }
+        if(/backspace/.test(e.srcElement.className)) {
+            input.innerHTML = ''
+            return
+        }
         if(/item/.test(e.srcElement.className)) {
             if(e.srcElement.innerHTML) {
                 if(e.srcElement.firstElementChild && /num/.test(e.srcElement.firstElementChild.className)) {
@@ -49,11 +53,11 @@ for (var i = 0; i < items.length; i++) {
                     input.innerHTML += add
                     return
                 }
-                add = e.srcElement.innerHTML
-                if( add === 'C') {
+                if(e.srcElement.firstElementChild && /backspace/.test(e.srcElement.firstElementChild.className)) {
                     input.innerHTML = ''
                     return
                 }
+                add = e.srcElement.innerHTML
                 input.innerHTML += add
                 return
             }
